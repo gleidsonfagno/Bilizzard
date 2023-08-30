@@ -1,0 +1,86 @@
+header{
+    display: flex;
+    flex-direction: column;
+    .content_esportes{
+        background: var(--colors-gradient-1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: fit-content;
+        max-height: 0;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        z-index: 5;
+        margin: auto;
+        
+        transition: all 0.5s ease 0s;
+        backdrop-filter: blur(6px); 
+        width: 100%;
+        
+        .section_bar{
+            width: 100%;
+            // height: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 55px 0;
+            // gap: 64px;
+            // gap: 10px;
+            align-items: center;
+            margin: 115px auto 0px;
+            flex-wrap: wrap;
+            
+            span{ 
+                margin: auto; 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                a{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 23px;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    max-width: 170px;
+                    color: var(--colors-white);
+                    text-decoration: none;
+                    img{
+                        display: block;
+                        object-fit: cover;
+                        width: 100%;
+                        transition: transform 0.3s ease-in-out;
+                    }
+                    img:hover{
+                        transform: scale(1.1); /* Aumenta em 10% */
+                        
+                    }
+                }
+            }
+        }
+        footer{
+            background-color: var(--colors-neutral);
+            width: 100%;
+            padding: 24px 0;
+            text-align: center;
+            a{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                justify-content: center;
+                color: var(--colors-white);
+                text-decoration: none;
+            }
+        }
+    }
+    // .content_esportes{
+    //     display: none; /* Oculta o conteúdo por padrão */
+    // }
+    .content_esportes.show {
+        max-height: 1000px;
+        // display: block; /* Mostra o conteúdo quando a classe 'show' é aplicada */
+    }    
+}

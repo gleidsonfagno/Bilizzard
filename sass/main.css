@@ -63,7 +63,7 @@ header {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 736px;
+  height: 100vh;
 }
 header .cabecalho {
   background: var(--colors-gradient-1);
@@ -73,6 +73,8 @@ header .cabecalho {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--colors-white);
+  position: relative;
+  z-index: 10;
 }
 header .cabecalho .logo {
   color: var(--colors-white);
@@ -183,6 +185,7 @@ nav button {
   align-items: center;
   border: none;
   color: var(--colors-white);
+  cursor: pointer;
 }
 nav a {
   color: var(--colors-white);
@@ -193,7 +196,7 @@ nav a {
   display: none;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 978px) {
   nav {
     display: none;
   }
@@ -201,6 +204,85 @@ nav a {
     display: block;
   }
 }
+header {
+  display: flex;
+  flex-direction: column;
+}
+header .content_esportes {
+  background: var(--colors-gradient-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 0;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  z-index: 5;
+  margin: auto;
+  transition: all 0.5s ease 0s;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  width: 100%;
+}
+header .content_esportes .section_bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 55px 0;
+  align-items: center;
+  margin: 115px auto 0px;
+  flex-wrap: wrap;
+}
+header .content_esportes .section_bar span {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header .content_esportes .section_bar span a {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 170px;
+  color: var(--colors-white);
+  text-decoration: none;
+}
+header .content_esportes .section_bar span a img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+header .content_esportes .section_bar span a img:hover {
+  transform: scale(1.1); /* Aumenta em 10% */
+}
+header .content_esportes footer {
+  background-color: var(--colors-neutral);
+  width: 100%;
+  padding: 24px 0;
+  text-align: center;
+}
+header .content_esportes footer a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: var(--colors-white);
+  text-decoration: none;
+}
+header .content_esportes.show {
+  max-height: 1000px;
+}
+
 :root {
   --cor-1: #00AEFF;
   --cor-2: #fff;

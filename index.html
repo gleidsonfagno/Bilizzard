@@ -19,19 +19,21 @@
             <div class="cabecalho">
                 <div class="novigation">
                     <div class="logo">
-                        <img src="assets/logo-blizzard.png" alt="">
+                        <img src="assets/logo-blizzard.png" alt="logo" loading="lazy" loading="eager">>
                         <span class="progress-bar"></span>
                     </div>
                     <nav>
                         <button>
                             <p>Jogos</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"
+                                fill="none">
                                 <path opacity="0.6" d="M1 1L6 6L11 1" stroke="white" stroke-width="2" />
                             </svg>
                         </button>
-                        <button>
+                        <button class="open_button">
                             <p>Esportes</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"
+                                fill="none">
                                 <path opacity="0.6" d="M1 1L6 6L11 1" stroke="white" stroke-width="2" />
                             </svg>
                         </button>
@@ -44,7 +46,7 @@
                     <div class="buttons">
                         <button class="criar" onclick="chamarModal()"><span>Criar conta</span></button>
                         <button class="logar" id="logar" onclick="chamarModal()">
-                            <img src="assets/banner-hero/icons/icons.png" alt="">
+                            <img src="assets/banner-hero/icons/icons.png" alt="icone" loading="lazy" loading="eager">>
                             <span>Logar</span>
                         </button>
                     </div>
@@ -58,7 +60,47 @@
                     </button>
                 </div>
             </div>
+
+            <div class="content_esportes" id="section1">
+                <div class="section_bar">
+                    <span>
+                        <a href="#">
+                            <img src="assets/banner-hero/esportes_1.png" alt="banner-hero" loading="lazy" loading="eager">
+                            <p>Hearthstone® masters</p>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="assets/banner-hero/esportes_2.png" alt="banner-hero" loading="lazy" loading="eager">
+                            <p>Campeonato Mundial de Arena WoW®</p>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="assets/banner-hero/esportes_3.png" alt="banner-hero" loading="lazy" loading="eager">
+                            <p>StarCraft® II WCS</p>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="assets/banner-hero/esportes_4.png" alt="banner-hero" loading="lazy" loading="eager"> 
+                            <p>Copa Mundial de Overwatch®</p>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="assets/banner-hero/esportes_5.png" alt="banner-hero" loading="lazy" loading="eager"> class="hover-effect">
+                            <p>Liga de Overwatch®</p>
+                        </a>
+                    </span>
+
+                </div>
+                <footer>
+                    <a href=""><img src="assets/banner-hero/icons/trofeu.svg" alt="banner-hero" loading="lazy" loading="eager">Torneios da comunidade</a>
+                </footer>
+            </div>
         </header>
+
         <div class="modal">
             <div class="email">
                 <button class="button_close">

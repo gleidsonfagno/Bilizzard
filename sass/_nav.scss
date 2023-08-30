@@ -20,6 +20,7 @@ nav{
         align-items: center;
         border: none;
         color: var(--colors-white);
+        cursor: pointer;
     }
     a{
         color: var(--colors-white);
@@ -31,7 +32,7 @@ nav{
     display: none;
 }
 
-@media (max-width: 868px) {
+@media (max-width: 978px) {
     nav{
         display: none;
     }

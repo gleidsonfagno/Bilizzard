@@ -3,10 +3,10 @@ header {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 736px;
-
-    // height: 100vh;
+    // height: 736px;
+    height: 100vh;
     .cabecalho {
+        // width: 100%;
         background: var(--colors-gradient-1);
         padding: 28px;
         display: flex;
@@ -14,6 +14,9 @@ header {
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid var(--colors-white);
+
+        position: relative;
+        z-index: 10;
 
         .logo {
             color: var(--colors-white);

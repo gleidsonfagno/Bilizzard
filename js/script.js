@@ -16,3 +16,15 @@ button_close.addEventListener("click", (event) =>{
 
     modal.style.display = "none"
 })
+
+// menu dorpdow
+document.addEventListener("DOMContentLoaded", function() {
+    const esportesButton = document.querySelector(".open_button");
+    const contentEsportes = document.querySelector(".content_esportes");
+    
+    esportesButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      contentEsportes.classList.toggle("show");
+    });
+});
+  
