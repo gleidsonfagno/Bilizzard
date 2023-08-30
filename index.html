@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&family=Montserrat:wght@600&family=Poppins:wght@500;700&family=Raleway:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="sass/main.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="cabecalho">
+                <div class="novigation">
+                    <div class="logo">
+                        <img src="assets/logo-blizzard.png" alt="">
+                        <span class="progress-bar"></span>
+                    </div>
+                    <nav>
+                        <button>
+                            <p>Jogos</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path opacity="0.6" d="M1 1L6 6L11 1" stroke="white" stroke-width="2" />
+                            </svg>
+                        </button>
+                        <button>
+                            <p>Esportes</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path opacity="0.6" d="M1 1L6 6L11 1" stroke="white" stroke-width="2" />
+                            </svg>
+                        </button>
+                        <a href="">Loja</a>
+                        <a href="">Notícias</a>
+                    </nav>
+                </div>
+                <div class="menu_bar">
+
+                    <div class="buttons">
+                        <button class="criar" onclick="chamarModal()"><span>Criar conta</span></button>
+                        <button class="logar" id="logar" onclick="chamarModal()">
+                            <img src="assets/banner-hero/icons/icons.png" alt="">
+                            <span>Logar</span>
+                        </button>
+                    </div>
+
+                    <button class="button_bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="21" viewBox="0 0 28 21" fill="none">
+                            <path d="M0 1H28" stroke="white" stroke-width="1.5" />
+                            <path d="M0 10.3334H28" stroke="white" stroke-width="1.5" />
+                            <path d="M0 19.6666H28" stroke="white" stroke-width="1.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="modal">
+            <div class="email">
+                <button class="button_close">
+                    <img src="assets/close.svg" alt="">
+                </button>
+                <form>
+                    <div class="logo_modal">
+                        <img src="assets/logo-battle-net.png" alt="">
+                    </div>
+
+                    <div class="dados">
+                        <input type="text" placeholder="E-mail ou telefone">
+                        <input type="password" placeholder="Senha">
+                        <button>Cadastrar-se</button>
+                    </div>
+
+                    <div class="sicial_links">
+                        <p>ou conecte-se com</p>
+                        <div class="social">
+                            <a href="#">
+                                <img src="assets/logo_gogle.svg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="assets/logo_ap.svg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="assets/logo_face.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer_modal">
+                        <p>
+                            <a href="">Crie uma conta</a> Battle.net de graça
+                        </p>
+                        <a href="">Não consegue logar?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

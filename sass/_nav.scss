@@ -1,0 +1,41 @@
+body{
+    background-color: #ccc;
+}
+// body *{
+//     border: 1px solid red;
+// }
+
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 34px;
+    button{
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+        align-items: center;
+        border: none;
+        color: var(--colors-white);
+    }
+    a{
+        color: var(--colors-white);
+        text-decoration: none;
+    }
+
+}
+.button_bar{
+    display: none;
+}
+
+@media (max-width: 868px) {
+    nav{
+        display: none;
+    }
+    .button_bar{
+        display: block;
+    }
+}
