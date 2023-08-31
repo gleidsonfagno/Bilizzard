@@ -35,6 +35,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   background: transparent;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   line-height: 1;
 }
@@ -58,15 +62,19 @@ table {
   border-spacing: 0;
 }
 
-header {
+main {
   background-image: url("../assets/banner-hero/games/diablo-bg.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
+
+header {
+  max-width: 1521px;
+  margin: 0 auto;
+}
 header .cabecalho {
-  background: var(--colors-gradient-1);
   padding: 28px;
   display: flex;
   flex-direction: row;
@@ -161,7 +169,7 @@ header .cabecalho .menu_bar .button_bar {
   border: none;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   header .cabecalho .menu_bar .buttons {
     display: none;
   }
@@ -207,6 +215,7 @@ nav a {
 header {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 header .content_esportes {
   background: var(--colors-gradient-1);
@@ -226,9 +235,15 @@ header .content_esportes {
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
   width: 100%;
+  width: 100%;
+  max-width: 1525px;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 header .content_esportes .section_bar {
   width: 100%;
+  max-width: 1216px;
   display: flex;
   flex-direction: row;
   padding: 55px 0;
@@ -265,6 +280,7 @@ header .content_esportes .section_bar span a img:hover {
   transform: scale(1.1); /* Aumenta em 10% */
 }
 header .content_esportes footer {
+  width: 100%;
   background-color: var(--colors-neutral);
   width: 100%;
   padding: 24px 0;
@@ -280,7 +296,95 @@ header .content_esportes footer a {
   text-decoration: none;
 }
 header .content_esportes.show {
-  max-height: 1000px;
+  max-height: 1300px;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+@media (max-width: 400px) {
+  .content_esportes.show {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+.content_jogos {
+  background: var(--colors-gradient-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 0;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  z-index: 5;
+  margin: auto;
+  transition: all 0.5s ease 0s;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  width: 100%;
+  width: 100%;
+  max-width: 1525px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.content_jogos .jogos {
+  width: 100%;
+  max-width: 1216px;
+  display: flex;
+  flex-direction: row;
+  padding: 55px 0;
+  align-items: center;
+  margin: 115px auto 0px;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 32px;
+}
+.content_jogos .jogos a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 176px;
+  margin: auto;
+  align-items: center;
+  padding: 33px 0;
+  gap: 8px;
+}
+.content_jogos .jogos a img {
+  width: 100%;
+  max-width: 69.396px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.content_jogos .jogos a img:hover {
+  transform: scale(1.1); /* Aumenta em 10% */
+}
+.content_jogos footer {
+  width: 100%;
+  background-color: var(--colors-neutral);
+  width: 100%;
+  padding: 24px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+}
+.content_jogos footer a {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.content_jogos.show {
+  max-height: 1300px;
 }
 
 :root {

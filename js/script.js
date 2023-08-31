@@ -19,12 +19,22 @@ button_close.addEventListener("click", (event) =>{
 
 // menu dorpdow
 document.addEventListener("DOMContentLoaded", function() {
-    const esportesButton = document.querySelector(".open_button");
+    const esportesButton = document.querySelector(".open_button_esportes");
+    const jogosButton = document.querySelector(".open_button_jogos");
+
+    const contentJogos = document.querySelector(".content_jogos")
     const contentEsportes = document.querySelector(".content_esportes");
     
     esportesButton.addEventListener("click", function(event) {
       event.preventDefault();
       contentEsportes.classList.toggle("show");
+      contentJogos.classList.remove("show")
+    });
+
+    jogosButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        contentJogos.classList.toggle("show")
+        contentEsportes.classList.remove("show");
     });
 });
   

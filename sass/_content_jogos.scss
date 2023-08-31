@@ -1,0 +1,102 @@
+
+
+.content_jogos {
+    background: var(--colors-gradient-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 0;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    z-index: 5;
+    margin: auto;
+
+    transition: all 0.5s ease 0s;
+    backdrop-filter: blur(6px);
+    width: 100%;
+    width: 100%;
+    max-width: 1525px;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .jogos {
+        width: 100%;
+        max-width: 1216px;
+        display: flex;
+        flex-direction: row;
+        padding: 55px 0;
+        align-items: center;
+        margin: 115px auto 0px;
+        flex-wrap: wrap;
+
+        // margin-top: 115px;
+        // max-width: 1216px;
+        // display: flex;
+        // flex-wrap: wrap;
+        // align-items: center;
+        text-align: center;
+        gap: 32px;
+
+        a {
+            // display: grid;
+            // grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+            // display: flex;
+            // flex-direction: column;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 176px;
+            margin: auto;
+            align-items: center;
+            padding: 33px 0;
+            gap: 8px;
+
+            img{
+                width: 100%;
+                max-width: 69.396px;
+                display: block;
+                object-fit: cover;
+                width: 100%;
+                transition: transform 0.3s ease-in-out;
+            }
+            img:hover{
+                transform: scale(1.1); /* Aumenta em 10% */
+                
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        background-color: var(--colors-neutral);
+        width: 100%;
+        padding: 24px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 64px;
+        a{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+    }
+}
+.content_jogos.show {
+    max-height: 1300px;
+    // display: block; /* Mostra o conteúdo quando a classe 'show' é aplicada */
+}  
+
+// @media (max-width: 400px) {
+//     .content_jogos.show.show {
+//         height: 100% !important;
+//         //* Mostra o conteúdo quando a classe 'show' é aplicada */
+//     } 
+// }
