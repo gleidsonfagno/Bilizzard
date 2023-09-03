@@ -63,11 +63,11 @@ table {
 }
 
 main {
+  transition: all 0.7s ease;
   background-image: url("../assets/banner-hero/games/diablo-bg.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
 }
 
 header {
@@ -94,7 +94,7 @@ header .cabecalho .logo {
 }
 header .cabecalho .logo .progress-bar {
   position: absolute;
-  bottom: -25px;
+  bottom: -29px;
   left: 0;
   width: 30%;
   height: 3px;
@@ -169,6 +169,10 @@ header .cabecalho .menu_bar .button_bar {
   border: none;
 }
 
+a {
+  color: var(--colors-white);
+}
+
 @media (max-width: 600px) {
   header .cabecalho .menu_bar .buttons {
     display: none;
@@ -212,6 +216,80 @@ nav a {
     display: block;
   }
 }
+:root {
+  --cor-1: #00AEFF;
+  --cor-2: #fff;
+}
+
+.modal {
+  background: url("../assets/modal.png"), lightgray 50%/cover no-repeat;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  max-width: 696px;
+  padding: 20px;
+  position: absolute;
+  margin: 0 auto;
+  top: 76px;
+  right: 0;
+  left: 0;
+  display: none;
+  border-radius: 4px;
+  z-index: 100;
+  opacity: 0;
+}
+.modal .email .button_close {
+  border: none;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  background-color: transparent;
+}
+.modal .email form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  max-width: 426px;
+  margin: 0 auto;
+}
+.modal .email form .dados {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.modal .email form .dados input {
+  padding: 13px;
+  border-radius: 4px;
+  outline: 0;
+  border: none;
+}
+.modal .email form .dados button {
+  padding: 13px;
+  border-radius: 4px;
+  background: var(--cor-1);
+  color: var(--cor-2);
+  border: none;
+}
+.modal .email form .sicial_links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--cor-2);
+}
+.modal .email form .sicial_links a {
+  display: inline-block;
+}
+.modal .email form .footer_modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--cor-2);
+}
+.modal .email form .footer_modal a {
+  color: var(--cor-1);
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -259,6 +337,7 @@ header .content_esportes .section_bar span {
   justify-content: center;
 }
 header .content_esportes .section_bar span a {
+  color: var(--colors-white);
   display: flex;
   flex-direction: column;
   gap: 23px;
@@ -266,7 +345,6 @@ header .content_esportes .section_bar span a {
   justify-content: center;
   text-align: center;
   max-width: 170px;
-  color: var(--colors-white);
   text-decoration: none;
 }
 header .content_esportes .section_bar span a img {
@@ -292,7 +370,6 @@ header .content_esportes footer a {
   align-items: center;
   gap: 10px;
   justify-content: center;
-  color: var(--colors-white);
   text-decoration: none;
 }
 header .content_esportes.show {
@@ -387,72 +464,132 @@ header .content_esportes.show {
   max-height: 1300px;
 }
 
-:root {
-  --cor-1: #00AEFF;
-  --cor-2: #fff;
+.secao_1 {
+  max-width: 1521px;
+  margin: auto;
+  background: transparent;
 }
-
-.modal {
-  background: url("../assets/modal.png"), lightgray 50%/cover no-repeat;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  max-width: 696px;
-  padding: 20px;
-  position: relative;
-  bottom: 660px;
-  margin: 0 auto;
-  display: none;
+.secao_1 .content_1 {
+  margin: 32px 51px;
+  display: flex;
+  flex-direction: row;
+  gap: 160px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.secao_1 .content_1 .left_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.secao_1 .content_1 .left_button button {
+  background: transparent;
+  border: none;
+}
+.secao_1 .content_1 .left_button button img {
+  display: block;
+  max-width: 48px;
+}
+.secao_1 .content_1 .conteudo_section_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10%;
+}
+.secao_1 .content_1 .conteudo_section_1 h1 {
+  color: var(--colors-white);
+  font-family: Poppins;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110.2%; /* 70.528px */
+  margin-bottom: 16px;
+}
+.secao_1 .content_1 .conteudo_section_1 p {
+  color: var(--colors-white);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.09px;
+  margin-bottom: 32px;
   border-radius: 4px;
 }
-.modal .email .button_close {
+.secao_1 .content_1 .conteudo_section_1 button {
+  padding: 14px 32px;
+  background: var(--colors-blue);
+  color: var(--colors-white);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
   border: none;
-  display: flex;
-  justify-content: end;
-  width: 100%;
-  background-color: transparent;
+  border-radius: 4px;
+  margin-bottom: 31px;
 }
-.modal .email form {
+.secao_1 .content_1 .conteudo_section_1 .right_content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 40px;
-  max-width: 426px;
-  margin: 0 auto;
+  gap: 112px;
 }
-.modal .email form .dados {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.secao_1 .content_1 .conteudo_section_1 .right_content img {
+  display: block;
   width: 100%;
+  width: 280px;
+  height: 158px;
+  flex-shrink: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.modal .email form .dados input {
-  padding: 13px;
-  border-radius: 4px;
-  outline: 0;
-  border: none;
-}
-.modal .email form .dados button {
-  padding: 13px;
-  border-radius: 4px;
-  background: var(--cor-1);
-  color: var(--cor-2);
-  border: none;
-}
-.modal .email form .sicial_links {
+.secao_1 .content_1 .conteudo_section_1 .right_content .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  color: var(--cor-2);
+  position: relative;
+  overflow: hidden;
 }
-.modal .email form .sicial_links a {
-  display: inline-block;
-}
-.modal .email form .footer_modal {
+.secao_1 .content_1 .conteudo_section_1 .right_content .container .overlay {
+  position: relative;
+  top: -161px;
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  color: var(--cor-2);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.modal .email form .footer_modal a {
-  color: var(--cor-1);
+.secao_1 .content_1 .conteudo_section_1 .right_content .container .overlay:hover {
+  opacity: 1; /* Mostrar a cobertura quando o mouse passa por cima */
+}
+
+@media (max-width: 1010px) {
+  .secao_1 .content_1 {
+    flex-direction: column-reverse;
+    gap: 0;
+    align-items: start;
+    margin: 32px;
+  }
+  .secao_1 .content_1 .left_button {
+    flex-direction: row;
+    gap: 11px;
+  }
+  .secao_1 .content_1 .conteudo_section_1 {
+    gap: 0;
+  }
+}
+@media (max-width: 700px) {
+  .secao_1 .content_1 .left_button {
+    justify-content: space-between;
+  }
+  .secao_1 .content_1 .conteudo_section_1 h1 {
+    font-size: 40px;
+  }
+  .secao_1 .content_1 .conteudo_section_1 .right_content {
+    display: none !important;
+  }
 }/*# sourceMappingURL=main.css.map */

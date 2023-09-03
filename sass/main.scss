@@ -17,9 +17,12 @@
     font-family: var(--fonts-poppins);
 }
 
+
+
 @import "reset";
 @import "header";
 @import "nav";
+@import "modal";
 @import "drop_esportes";
 @import "content_jogos";
-@import "modal";
+@import "section_1"

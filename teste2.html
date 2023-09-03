@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(assets/banner-hero/games/diablo-bg.png);
+            transition: all 0.4s ease;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: relative;
+            top: -204px;
+            width: 100%;
+            height: 100%;
+            /* background-color: rgba(0, 0, 0, 0.5); Cobertura semi-transparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay img {
+            width: 300px; /* Ajuste o tamanho do seu GIF aqui */
+            height: 300px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay:hover {
+            opacity: 1; /* Mostrar a cobertura quando o mouse passa por cima */
+        }
+    </style>
+</head>
+
+<body>
+    <section class="content_1">
+        <div class="left_button">
+            <button id="1"><img src="assets/banner-hero/icons/game-7.png" alt=""></button>
+            <button id="2"><img src="assets/banner-hero/icons/game-4.png" alt=""></button>
+            <button id="3"><img src="assets/banner-hero/icons/game-6.png" alt=""></button>
+            <button id="4"><img src="assets/banner-hero/icons/game-8.png" alt=""></button>
+            <button id="5"><img src="assets/banner-hero/icons/game-10.png" alt=""></button>
+        </div>
+        <div class="conteudo_section_1">
+            <div class="left_content">
+                <h1 id="titulo">Retorne à escuridão com o game Diablo IV</h1>
+                <p id="paragrafo">O retorno de Lilith traz uma era de escuridão e sofrimento</p>
+                <button>Jogue agora</button>
+            </div>
+            <div class="right_content">
+                <img class="logo" src="assets/banner-hero/games/diablo-logo.png" alt="">
+                <div class="container">
+                    <img class="capaGif" src="assets/banner-hero/games/diablo-animation-cover.png" alt="">
+                    <div class="overlay">
+                        <img class="imagem" src="assets/banner-hero/games/diablo-animation.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Um array de objetos "logos", cada objeto representa informações sobre um logotipo e sua animação associada
+        const logos = [
+            {
+                id: "1",
+                titulo: 'Retorna à escuridão com o game Diablo IV',
+                paragrafo: 'O retorno de Lilith traz uma era de escuridão e sofrimento',
+                imagemFundo: 'assets/banner-hero/games/diablo-bg.png',
+                capaGif: 'assets/banner-hero/games/diablo-animation-cover.png',
+                srcGif: 'assets/banner-hero/games/diablo-animation.gif',
+                button: 'Jogue agora',
+                logoItem: "assets/banner-hero/games/diablo-logo.png",
+            },
+            {
+                id: "2",
+                titulo: 'Novo pacote de expansão de Hearthstone',
+                paragrafo: 'A Horda e a Aliança se encontraram no Vale Alterac para lutar',
+                imagemFundo: 'assets/banner-hero/games/hearthstone-bg.png',
+                capaGif: 'assets/banner-hero/games/hearthstone-animation-cover.png',
+                srcGif: 'assets/banner-hero/games/hearthstone-animation.gif',
+                button: 'Reserve agora na pré-venda',
+                logoItem: "assets/banner-hero/games/hearthstone-logo.png",
+            },
+            {
+                id: "3",
+                titulo: 'Desbrave as Terras Sombrias em Shadowlands! ',
+                paragrafo: 'O que jaz além do mundo que você conhece?',
+                imagemFundo: 'assets/banner-hero/games/wow-bg.png',
+                capaGif: 'assets/banner-hero/games/wow-animation-cover.png',
+                srcGif: 'assets/banner-hero/games/wow-animation.gif',
+                button: 'Reserve agora na pré-venda',
+                logoItem: "assets/banner-hero/games/wow-logo.png",
+            },
+            // ... Outros objetos semelhantes representando diferentes logotipos e informações
+        ];
+
+        // Função "mudarConteudo" é responsável por atualizar o conteúdo da página com base no objeto de logotipo fornecido
+        function mudarConteudo(logo) {
+            // Atualizar o título e parágrafo com informações do logotipo
+            document.getElementById('titulo').textContent = logo.titulo;
+            document.getElementById('paragrafo').textContent = logo.paragrafo;
+
+            // Atualizar o plano de fundo da página com a imagem de fundo do logotipo
+            document.body.style.backgroundImage = `url('${logo.imagemFundo}')`;
+
+            // Selecionar elementos HTML relacionados à animação do logotipo
+            const container = document.querySelector('.container');
+            const overlay = container.querySelector('.overlay');
+            const overlayImg = overlay.querySelector('img');
+            const capa = document.querySelector(".capaGif");
+            const imgLogo = document.querySelector(".logo")
+
+            // Configurar a imagem de sobreposição com a capa da animação do logotipo
+            overlayImg.src = logo.capaGif;
+            overlayImg.alt = logo.capaGif;
+
+            // Atualizar a capa da animação do logotipo e a imagem do logotipo
+            capa.src = logo.capaGif;
+            imgLogo.src = logo.logoItem;
+
+            // Adicionar eventos de mouseover e mouseout para controlar a animação
+            container.addEventListener('mouseover', function () {
+                overlay.style.opacity = 1;
+                overlayImg.src = logo.srcGif;
+            });
+
+            container.addEventListener('mouseout', function () {
+                overlay.style.opacity = 0;
+                overlayImg.src = logo.capaGif;
+            });
+        }
+
+
+        // Quando o DOM (Document Object Model) estiver pronto, adicione eventos de clique a cada logotipo
+        document.addEventListener('DOMContentLoaded', function () {
+            logos.forEach(function (logoObj) {
+                console.log(logoObj)// esse logoObj rece 3 numero  se eu clicar no button com o id ex 2 vai inserio os dados o  logos com o id 2
+                // seleciona o id do button que for clicado 
+                const logo = document.getElementById(logoObj.id);
+                console.log(logo)
+
+                // Quando um logotipo for clicado, chame a função "mudarConteudo" com o objeto de logotipo correspondente
+                logo.addEventListener('click', function () {
+                    // , e adiciona um ouvinte de evento de clique a ele. Quando o botão de logotipo é clicado
+                    mudarConteudo(logoObj);
+                    console.log(logoObj)
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
