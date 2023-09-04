@@ -82,11 +82,12 @@ function mudarConteudo(logo) {
     document.getElementById('titulo').textContent = logo.titulo;
     document.getElementById('paragrafo').textContent = logo.paragrafo;
 
-    const mainElement = document.querySelector("main");
+    const mainElement = document.querySelector("header");
     // Atualizar o plano de fundo da página com a imagem de fundo do logotipo
     // document.body.style.backgroundImage = `url('${logo.imagemFundo}')`;
 
     mainElement.style.backgroundImage = `url('${logo.imagemFundo}')`;
+    mainElement.style.backgroundPosition = "center center;"
 
     // Selecionar elementos HTML relacionados à animação do logotipo
     const container = document.querySelector('.container');
@@ -98,6 +99,8 @@ function mudarConteudo(logo) {
     // Configurar a imagem de sobreposição com a capa da animação do logotipo
     overlayImg.src = logo.capaGif;
     overlayImg.alt = logo.capaGif;
+    
+
 
     // Atualizar a capa da animação do logotipo e a imagem do logotipo
     capa.src = logo.capaGif;
@@ -132,3 +135,76 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Resto do seu código ...
+let currentLogoIndex = 0;
+// Função para trocar o conteúdo e plano de fundo
+function trocarConteudoAutomaticamente() {
+    // Obtém um índice aleatório para selecionar um logotipo diferente
+    // Obtém o logotipo com base no índice atual
+    const logoObj = logos[currentLogoIndex];
+
+    // Chama a função para mudar o conteúdo com o logotipo atual
+    mudarConteudo(logoObj);
+
+    // Reinicia a barra de progresso
+    startProgess();
+
+    // Atualiza o índice atual para o próximo logotipo (circular)
+    currentLogoIndex = (currentLogoIndex + 1) % logos.length;
+    // setInterval(startProgess, 5000)
+    function startProgess(){
+        const progresContainer = document.querySelector(".progres");
+        let width = 0;
+    
+        const interval = setInterval(function(){
+            if (width >= 100){
+                clearInterval(interval);
+            } else{
+                width++
+                progresContainer.style.width = width + "%"
+            }
+        }, 50); // 50ms interval for smooth progress, you can adjust this
+    }
+}
+
+// Inicia a troca de conteúdo automaticamente a cada 10 segundos
+setInterval(trocarConteudoAutomaticamente, 5000); // 10000 milissegundos = 10 segundos
+
+
+
+// Função para buscar dados da API
+async function fetchGameData() {
+    try {
+      const response = await fetch('https://api.brchallenges.com/api/blizzard/games');
+      
+      if (!response.ok) {
+        throw new Error('Erro na solicitação');
+      }
+  
+      const data = await response.json();
+      return data;
+
+    } catch (error) {
+      console.error('Erro ao buscar dados da API:', error);
+    }
+  }
+  
+  // Chama a função para buscar os dados
+  fetchGameData().then(data => {
+    if (data) {
+      console.log('Dados da API:', data);
+      // Faça algo com os dados aqui
+
+      data.forEach((element, index) => {
+        console.log(index)
+        console.log(element);
+      });
+
+      for (const element of data) {
+        // Código a ser executado para cada elemento
+        console.log(element)
+      }
+    }
+  });
+  

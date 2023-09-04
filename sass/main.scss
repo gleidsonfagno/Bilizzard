@@ -17,7 +17,9 @@
     font-family: var(--fonts-poppins);
 }
 
-
+button{
+    cursor: pointer;
+}
 
 @import "reset";
 @import "header";
@@ -25,4 +27,5 @@
 @import "modal";
 @import "drop_esportes";
 @import "content_jogos";
-@import "section_1"
+@import "section_1";
+@import "section_2"

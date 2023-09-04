@@ -1,0 +1,122 @@
+.secao_2 *{
+    border: 1px solid red;
+}
+.secao_2{
+    color: var(--colors-white);
+    // height: 100vh;
+    width: 100%;
+    // background: var(--colors-gradient-2);
+    background: var(--colors-neutral);
+    .app_card{
+        max-width: 1521px;
+        margin: 0 auto;
+        padding: 0 51px;
+        .header{
+            padding: 85px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                color: #8F9199;
+                font-family: Poppins;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+            h2{
+                font-family: Poppins;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 110.2%; /* 35.264px */
+            }
+            .logos{
+                button{
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+            .ver_todos{
+                button{
+                    background: transparent;
+                    border: none;
+                    color: var(--colors-white);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                    p{
+                        color: var(--colors-blue);
+                        text-align: center;
+                        font-family: Poppins;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        display: block !important;
+                    }
+                }
+
+            }
+        }
+        .cards{
+            display: grid;
+            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(159px, 287px));
+            place-content: center;
+            .card{
+                position: relative;
+                img{
+                    display: block;
+                    height: 393px;
+                    max-width: 100%;
+                    object-fit: cover;
+
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .secao_2{
+        .app_card{
+            padding: 0 14px;
+            .header{
+                padding: 85px 0;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                p{
+                    display: none;
+                }
+                .logos{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .secao_2{
+        .app_card{
+            padding: 0 14px;
+            .header{
+                h2{
+                    font-size: 28px;
+                }
+                .logos{
+                    display: none;
+                }
+            }
+        }
+    }
+}

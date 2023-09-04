@@ -16,6 +16,10 @@
   font-family: var(--fonts-poppins);
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Reset CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -62,19 +66,19 @@ table {
   border-spacing: 0;
 }
 
-main {
+header {
   transition: all 0.7s ease;
   background-image: url("../assets/banner-hero/games/diablo-bg.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-header {
-  max-width: 1521px;
+header .center {
   margin: 0 auto;
+  max-width: 1521px;
+  width: 100%;
 }
-header .cabecalho {
+header .center .cabecalho {
   padding: 28px;
   display: flex;
   flex-direction: row;
@@ -84,7 +88,7 @@ header .cabecalho {
   position: relative;
   z-index: 10;
 }
-header .cabecalho .logo {
+header .center .cabecalho .logo {
   color: var(--colors-white);
   border: none;
   border-radius: 5px;
@@ -92,7 +96,7 @@ header .cabecalho .logo {
   position: relative;
   transition: background-color 0.3s;
 }
-header .cabecalho .logo .progress-bar {
+header .center .cabecalho .logo .progress-bar {
   position: absolute;
   bottom: -29px;
   left: 0;
@@ -101,45 +105,45 @@ header .cabecalho .logo .progress-bar {
   background-color: var(--colors-blue);
   transition: width 0.3s;
 }
-header .cabecalho .logo:hover .progress-bar {
+header .center .cabecalho .logo:hover .progress-bar {
   width: 100%;
 }
-header .cabecalho .novigation {
+header .center .cabecalho .novigation {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 121px;
 }
-header .cabecalho .menu_bar {
+header .center .cabecalho .menu_bar {
   display: flex;
   flex-direction: row;
   gap: 89px;
   align-items: center;
   justify-content: space-between;
 }
-header .cabecalho .menu_bar .buttons {
+header .center .cabecalho .menu_bar .buttons {
   gap: 16px;
   display: flex;
   flex-direction: row;
 }
-header .cabecalho .menu_bar .buttons button {
+header .center .cabecalho .menu_bar .buttons button {
   background: transparent;
   padding: 10px 25.231px;
   border-radius: 3px;
   color: var(--colors-white);
   cursor: pointer;
 }
-header .cabecalho .menu_bar .buttons .criar {
+header .center .cabecalho .menu_bar .buttons .criar {
   border: 0.788px solid #FFF;
   color: #fff;
   position: relative;
   overflow: hidden;
 }
-header .cabecalho .menu_bar .buttons .criar span {
+header .center .cabecalho .menu_bar .buttons .criar span {
   position: relative;
   z-index: 1;
 }
-header .cabecalho .menu_bar .buttons .criar::before {
+header .center .cabecalho .menu_bar .buttons .criar::before {
   content: "";
   position: absolute;
   top: 0;
@@ -150,13 +154,13 @@ header .cabecalho .menu_bar .buttons .criar::before {
   transform: translateX(0);
   transition: transform 0.5s;
 }
-header .cabecalho .menu_bar .buttons .criar:hover::before {
+header .center .cabecalho .menu_bar .buttons .criar:hover::before {
   transform: translateX(100%);
 }
-header .cabecalho .menu_bar .buttons .criar:hover {
+header .center .cabecalho .menu_bar .buttons .criar:hover {
   color: #000;
 }
-header .cabecalho .menu_bar .buttons .logar {
+header .center .cabecalho .menu_bar .buttons .logar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +168,7 @@ header .cabecalho .menu_bar .buttons .logar {
   background: var(--colors-blue);
   border: none;
 }
-header .cabecalho .menu_bar .button_bar {
+header .center .cabecalho .menu_bar .button_bar {
   background-color: transparent;
   border: none;
 }
@@ -496,7 +500,7 @@ header .content_esportes.show {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10%;
+  gap: 9%;
 }
 .secao_1 .content_1 .conteudo_section_1 h1 {
   color: var(--colors-white);
@@ -550,11 +554,22 @@ header .content_esportes.show {
   display: flex;
   flex-direction: column;
   position: relative;
+  text-align: end;
   overflow: hidden;
+}
+.secao_1 .content_1 .conteudo_section_1 .right_content .container p {
+  color: var(--colors-white);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
 }
 .secao_1 .content_1 .conteudo_section_1 .right_content .container .overlay {
   position: relative;
-  top: -161px;
+  top: -159px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -566,13 +581,18 @@ header .content_esportes.show {
 .secao_1 .content_1 .conteudo_section_1 .right_content .container .overlay:hover {
   opacity: 1; /* Mostrar a cobertura quando o mouse passa por cima */
 }
+.secao_1 .progres {
+  background: var(--colors-blue);
+  height: 3px;
+  width: 0;
+}
 
 @media (max-width: 1010px) {
   .secao_1 .content_1 {
     flex-direction: column-reverse;
     gap: 0;
     align-items: start;
-    margin: 32px;
+    margin: 32px 14px;
   }
   .secao_1 .content_1 .left_button {
     flex-direction: row;
@@ -581,8 +601,13 @@ header .content_esportes.show {
   .secao_1 .content_1 .conteudo_section_1 {
     gap: 0;
   }
+  .secao_1 .content_1 .conteudo_section_1 h1 {
+    color: var(--colors-white);
+    font-family: Poppins;
+    font-size: 60px;
+  }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .secao_1 .content_1 .left_button {
     justify-content: space-between;
   }
@@ -591,5 +616,113 @@ header .content_esportes.show {
   }
   .secao_1 .content_1 .conteudo_section_1 .right_content {
     display: none !important;
+  }
+}
+.secao_2 * {
+  border: 1px solid red;
+}
+
+.secao_2 {
+  color: var(--colors-white);
+  width: 100%;
+  background: var(--colors-neutral);
+}
+.secao_2 .app_card {
+  max-width: 1521px;
+  margin: 0 auto;
+  padding: 0 51px;
+}
+.secao_2 .app_card .header {
+  padding: 85px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.secao_2 .app_card .header p {
+  color: #8F9199;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.secao_2 .app_card .header h2 {
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110.2%; /* 35.264px */
+}
+.secao_2 .app_card .header .logos button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.secao_2 .app_card .header .ver_todos button {
+  background: transparent;
+  border: none;
+  color: var(--colors-white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.secao_2 .app_card .header .ver_todos button p {
+  color: var(--colors-blue);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: block !important;
+}
+.secao_2 .app_card .cards {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(159px, 287px));
+  place-content: center;
+}
+.secao_2 .app_card .cards .card {
+  position: relative;
+}
+.secao_2 .app_card .cards .card img {
+  display: block;
+  height: 393px;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .secao_2 .app_card {
+    padding: 0 14px;
+  }
+  .secao_2 .app_card .header {
+    padding: 85px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .secao_2 .app_card .header p {
+    display: none;
+  }
+  .secao_2 .app_card .header .logos {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .secao_2 .app_card {
+    padding: 0 14px;
+  }
+  .secao_2 .app_card .header h2 {
+    font-size: 28px;
+  }
+  .secao_2 .app_card .header .logos {
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */
