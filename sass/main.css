@@ -744,10 +744,10 @@ header .content_esportes.show {
 }
 
 @media (max-width: 800px) {
-  .secao_2 .app_card {
+  .Jogos_Exclusivo .app_card {
     padding: 0 14px;
   }
-  .secao_2 .app_card .header {
+  .Jogos_Exclusivo .app_card .header {
     padding: 85px 0;
     width: 100%;
     display: flex;
@@ -755,13 +755,13 @@ header .content_esportes.show {
     align-items: center;
     justify-content: space-between;
   }
-  .secao_2 .app_card .header p {
+  .Jogos_Exclusivo .app_card .header p {
     display: none;
   }
-  .secao_2 .app_card .header .logos {
+  .Jogos_Exclusivo .app_card .header .logos {
     display: none;
   }
-  .secao_2 .app_card .cards {
+  .Jogos_Exclusivo .app_card .cards {
     display: grid;
     gap: 32px;
     grid-template-columns: repeat(auto-fit, minmax(159px, 287px));
@@ -769,13 +769,13 @@ header .content_esportes.show {
   }
 }
 @media (max-width: 768px) {
-  .secao_2 .app_card {
+  .Jogos_Exclusivo .app_card {
     padding: 0 14px;
   }
-  .secao_2 .app_card .header h2 {
+  .Jogos_Exclusivo .app_card .header h2 {
     font-size: 28px;
   }
-  .secao_2 .app_card .header .logos {
+  .Jogos_Exclusivo .app_card .header .logos {
     display: none;
   }
 }
