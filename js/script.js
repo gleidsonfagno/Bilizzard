@@ -8,31 +8,31 @@ const modal = document.querySelector(".modal")
 
 // })
 
-function chamarModal(){
+function chamarModal() {
     modal.style.display = "block"
     modal.style.opacity = "1";
 }
-button_close.addEventListener("click", (event) =>{
+button_close.addEventListener("click", (event) => {
     // event.preventDefault()
     modal.style.opacity = "0";
     modal.style.display = "none"
 })
 
 // menu dorpdow
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const esportesButton = document.querySelector(".open_button_esportes");
     const jogosButton = document.querySelector(".open_button_jogos");
 
     const contentJogos = document.querySelector(".content_jogos")
     const contentEsportes = document.querySelector(".content_esportes");
-    
-    esportesButton.addEventListener("click", function(event) {
-      event.preventDefault();
-      contentEsportes.classList.toggle("show");
-      contentJogos.classList.remove("show")
+
+    esportesButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        contentEsportes.classList.toggle("show");
+        contentJogos.classList.remove("show")
     });
 
-    jogosButton.addEventListener("click", function(event) {
+    jogosButton.addEventListener("click", function (event) {
         event.preventDefault();
         contentJogos.classList.toggle("show")
         contentEsportes.classList.remove("show");
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // troca de conteudo
- // Um array de objetos "logos", cada objeto representa informações sobre um logotipo e sua animação associada
- const logos = [
+// Um array de objetos "logos", cada objeto representa informações sobre um logotipo e sua animação associada
+const logos = [
     {
         id: "1",
         titulo: 'Retorna à escuridão com o game Diablo IV',
@@ -99,7 +99,7 @@ function mudarConteudo(logo) {
     // Configurar a imagem de sobreposição com a capa da animação do logotipo
     overlayImg.src = logo.capaGif;
     overlayImg.alt = logo.capaGif;
-    
+
 
 
     // Atualizar a capa da animação do logotipo e a imagem do logotipo
@@ -153,14 +153,14 @@ function trocarConteudoAutomaticamente() {
     // Atualiza o índice atual para o próximo logotipo (circular)
     currentLogoIndex = (currentLogoIndex + 1) % logos.length;
     // setInterval(startProgess, 5000)
-    function startProgess(){
+    function startProgess() {
         const progresContainer = document.querySelector(".progres");
         let width = 0;
-    
-        const interval = setInterval(function(){
-            if (width >= 100){
+
+        const interval = setInterval(function () {
+            if (width >= 100) {
                 clearInterval(interval);
-            } else{
+            } else {
                 width++
                 progresContainer.style.width = width + "%"
             }
@@ -168,43 +168,87 @@ function trocarConteudoAutomaticamente() {
     }
 }
 
-// Inicia a troca de conteúdo automaticamente a cada 10 segundos
+// Inicia a troca de conteúdo automaticamente a cada 5 segundos
 setInterval(trocarConteudoAutomaticamente, 5000); // 10000 milissegundos = 10 segundos
 
+const cards = document.querySelector(".cards")
+
+const apiUrl = "https://api.brchallenges.com/api/blizzard/games"
+// Faz uma solicitação GET à API usando fetch
+
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+
+        data.forEach((item, index) => {
+            // o item e dada elemento do array data
+
+            console.log(item)
+            const cardDiv = document.createElement("div");
+            cardDiv.classList.add("card");
+
+            const textoDiv = document.createElement("div");
+            textoDiv.classList.add("texto");
+
+            const imagem = document.createElement("img");
+            imagem.src = item.image;
+            imagem.alt = "";
+
+            const nomeParagrafo = document.createElement("p");
+            nomeParagrafo.textContent = item.name;
+
+            const categorySpan = document.createElement("span");
+            categorySpan.textContent = item.category;
+
+            const logoImagem = document.createElement("img");
+            logoImagem.classList.add("relative");
+            logoImagem.src = item.logo;
+            logoImagem.alt = "";
+
+            textoDiv.appendChild(imagem);
+            textoDiv.appendChild(nomeParagrafo);
+            textoDiv.appendChild(categorySpan);
+
+            cardDiv.appendChild(textoDiv);
+            cardDiv.appendChild(logoImagem);
+
+            cards.appendChild(cardDiv);
 
 
-// Função para buscar dados da API
-async function fetchGameData() {
-    try {
-      const response = await fetch('https://api.brchallenges.com/api/blizzard/games');
-      
-      if (!response.ok) {
-        throw new Error('Erro na solicitação');
-      }
-  
-      const data = await response.json();
-      return data;
+        })
+         const cardMais = document.querySelector(".card_mais")
 
-    } catch (error) {
-      console.error('Erro ao buscar dados da API:', error);
-    }
-  }
-  
-  // Chama a função para buscar os dados
-  fetchGameData().then(data => {
-    if (data) {
-      console.log('Dados da API:', data);
-      // Faça algo com os dados aqui
+            // const ver_todos = document.createElement("div");
+            // ver_todos.classList.add("ver_todos");
+            // cardMais.appendChild(ver_todos)
 
-      data.forEach((element, index) => {
-        console.log(index)
-        console.log(element);
-      });
+            // ver_todos.innerHTML = `
+            //         <img src="assets/logo-blizzard.png" alt="">
+            //                 <button>
+            //                     <svg xmlns="http://www.w3.org/2000/svg" width="9" height="10" viewBox="0 0 9 10" fill="none">
+            //                         <rect y="0.5" width="3" height="3" fill="#61CDFF"/>
+            //                         <rect y="6.5" width="3" height="3" fill="#61CDFF"/>
+            //                         <rect x="6" y="0.5" width="3" height="3" fill="#61CDFF"/>
+            //                         <rect x="6" y="6.5" width="3" height="3" fill="#61CDFF"/>
+            //                       </svg>
+            //                     <p>Ver todos jogos</p>
+            //                 </button>
+            
 
-      for (const element of data) {
-        // Código a ser executado para cada elemento
-        console.log(element)
-      }
-    }
-  });
-  
+        cardMais.innerHTML = `
+        <div class="ver_todos">
+                            <img src="assets/logo-blizzard.png" alt="">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="10" viewBox="0 0 9 10" fill="none">
+                                    <rect y="0.5" width="3" height="3" fill="#61CDFF"/>
+                                    <rect y="6.5" width="3" height="3" fill="#61CDFF"/>
+                                    <rect x="6" y="0.5" width="3" height="3" fill="#61CDFF"/>
+                                    <rect x="6" y="6.5" width="3" height="3" fill="#61CDFF"/>
+                                  </svg>
+                                <p>Ver todos jogos</p>
+                            </button>
+                        </div>
+        `
+
+    });

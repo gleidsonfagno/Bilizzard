@@ -8,6 +8,7 @@ header {
     background-size: cover;
     
     .center {
+        border-bottom: 1px solid var(--colors-white);
         margin: 0 auto;
         max-width: 1521px;
         width: 100%;
@@ -17,7 +18,6 @@ header {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--colors-white);
 
             position: relative;
             z-index: 10;
@@ -64,6 +64,7 @@ header {
                     gap: 16px;
                     display: flex;
                     flex-direction: row;
+                    flex-wrap: wrap;
 
                     button {
                         background: transparent;
@@ -133,10 +134,12 @@ a {
 
 @media (max-width: 600px) {
     header {
-        .cabecalho {
-            .menu_bar {
-                .buttons {
-                    display: none;
+        .center {
+            .cabecalho {
+                .menu_bar {
+                    .buttons {
+                        display: none;
+                    }
                 }
             }
         }

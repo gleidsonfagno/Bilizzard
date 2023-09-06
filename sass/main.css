@@ -74,6 +74,7 @@ header {
   background-size: cover;
 }
 header .center {
+  border-bottom: 1px solid var(--colors-white);
   margin: 0 auto;
   max-width: 1521px;
   width: 100%;
@@ -84,7 +85,6 @@ header .center .cabecalho {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--colors-white);
   position: relative;
   z-index: 10;
 }
@@ -125,6 +125,7 @@ header .center .cabecalho .menu_bar .buttons {
   gap: 16px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 header .center .cabecalho .menu_bar .buttons button {
   background: transparent;
@@ -178,7 +179,7 @@ a {
 }
 
 @media (max-width: 600px) {
-  header .cabecalho .menu_bar .buttons {
+  header .center .cabecalho .menu_bar .buttons {
     display: none;
   }
 }
@@ -468,12 +469,12 @@ header .content_esportes.show {
   max-height: 1300px;
 }
 
-.secao_1 {
+.Banner_hero {
   max-width: 1521px;
   margin: auto;
   background: transparent;
 }
-.secao_1 .content_1 {
+.Banner_hero .content_1 {
   margin: 32px 51px;
   display: flex;
   flex-direction: row;
@@ -481,28 +482,29 @@ header .content_esportes.show {
   align-items: center;
   justify-content: space-evenly;
 }
-.secao_1 .content_1 .left_button {
+.Banner_hero .content_1 .left_button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
-.secao_1 .content_1 .left_button button {
+.Banner_hero .content_1 .left_button button {
   background: transparent;
   border: none;
 }
-.secao_1 .content_1 .left_button button img {
+.Banner_hero .content_1 .left_button button img {
   display: block;
   max-width: 48px;
 }
-.secao_1 .content_1 .conteudo_section_1 {
+.Banner_hero .content_1 .conteudo_section_1 {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 9%;
 }
-.secao_1 .content_1 .conteudo_section_1 h1 {
+.Banner_hero .content_1 .conteudo_section_1 h1 {
   color: var(--colors-white);
   font-family: Poppins;
   font-size: 64px;
@@ -511,7 +513,7 @@ header .content_esportes.show {
   line-height: 110.2%; /* 70.528px */
   margin-bottom: 16px;
 }
-.secao_1 .content_1 .conteudo_section_1 p {
+.Banner_hero .content_1 .conteudo_section_1 p {
   color: var(--colors-white);
   font-size: 18px;
   font-style: normal;
@@ -521,7 +523,7 @@ header .content_esportes.show {
   margin-bottom: 32px;
   border-radius: 4px;
 }
-.secao_1 .content_1 .conteudo_section_1 button {
+.Banner_hero .content_1 .conteudo_section_1 button {
   padding: 14px 32px;
   background: var(--colors-blue);
   color: var(--colors-white);
@@ -535,13 +537,13 @@ header .content_esportes.show {
   border-radius: 4px;
   margin-bottom: 31px;
 }
-.secao_1 .content_1 .conteudo_section_1 .right_content {
+.Banner_hero .content_1 .conteudo_section_1 .right_content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 112px;
 }
-.secao_1 .content_1 .conteudo_section_1 .right_content img {
+.Banner_hero .content_1 .conteudo_section_1 .right_content img {
   display: block;
   width: 100%;
   width: 280px;
@@ -550,14 +552,14 @@ header .content_esportes.show {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.secao_1 .content_1 .conteudo_section_1 .right_content .container {
+.Banner_hero .content_1 .conteudo_section_1 .right_content .container {
   display: flex;
   flex-direction: column;
   position: relative;
   text-align: end;
   overflow: hidden;
 }
-.secao_1 .content_1 .conteudo_section_1 .right_content .container p {
+.Banner_hero .content_1 .conteudo_section_1 .right_content .container p {
   color: var(--colors-white);
   text-align: center;
   font-family: Poppins;
@@ -567,7 +569,7 @@ header .content_esportes.show {
   line-height: normal;
   text-transform: uppercase;
 }
-.secao_1 .content_1 .conteudo_section_1 .right_content .container .overlay {
+.Banner_hero .content_1 .conteudo_section_1 .right_content .container .overlay {
   position: relative;
   top: -159px;
   height: 100%;
@@ -578,61 +580,57 @@ header .content_esportes.show {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.secao_1 .content_1 .conteudo_section_1 .right_content .container .overlay:hover {
+.Banner_hero .content_1 .conteudo_section_1 .right_content .container .overlay:hover {
   opacity: 1; /* Mostrar a cobertura quando o mouse passa por cima */
 }
-.secao_1 .progres {
+.Banner_hero .progres {
   background: var(--colors-blue);
   height: 3px;
   width: 0;
 }
 
 @media (max-width: 1010px) {
-  .secao_1 .content_1 {
+  .Banner_hero .content_1 {
     flex-direction: column-reverse;
     gap: 0;
     align-items: start;
     margin: 32px 14px;
   }
-  .secao_1 .content_1 .left_button {
+  .Banner_hero .content_1 .left_button {
     flex-direction: row;
     gap: 11px;
   }
-  .secao_1 .content_1 .conteudo_section_1 {
+  .Banner_hero .content_1 .conteudo_section_1 {
     gap: 0;
   }
-  .secao_1 .content_1 .conteudo_section_1 h1 {
+  .Banner_hero .content_1 .conteudo_section_1 h1 {
     color: var(--colors-white);
     font-family: Poppins;
     font-size: 60px;
   }
 }
 @media (max-width: 800px) {
-  .secao_1 .content_1 .left_button {
+  .Banner_hero .content_1 .left_button {
     justify-content: space-between;
   }
-  .secao_1 .content_1 .conteudo_section_1 h1 {
+  .Banner_hero .content_1 .conteudo_section_1 h1 {
     font-size: 40px;
   }
-  .secao_1 .content_1 .conteudo_section_1 .right_content {
+  .Banner_hero .content_1 .conteudo_section_1 .right_content {
     display: none !important;
   }
 }
-.secao_2 * {
-  border: 1px solid red;
-}
-
-.secao_2 {
+.Jogos_Exclusivo {
   color: var(--colors-white);
   width: 100%;
-  background: var(--colors-neutral);
+  background: var(--colors-gradient-2);
 }
-.secao_2 .app_card {
+.Jogos_Exclusivo .app_card {
   max-width: 1521px;
   margin: 0 auto;
   padding: 0 51px;
 }
-.secao_2 .app_card .header {
+.Jogos_Exclusivo .app_card .header {
   padding: 85px 0;
   width: 100%;
   display: flex;
@@ -640,27 +638,25 @@ header .content_esportes.show {
   align-items: center;
   justify-content: space-between;
 }
-.secao_2 .app_card .header p {
+.Jogos_Exclusivo .app_card .header p {
   color: #8F9199;
-  font-family: Poppins;
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
-.secao_2 .app_card .header h2 {
-  font-family: Poppins;
+.Jogos_Exclusivo .app_card .header h2 {
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
   line-height: 110.2%; /* 35.264px */
 }
-.secao_2 .app_card .header .logos button {
+.Jogos_Exclusivo .app_card .header .logos button {
   background: transparent;
   border: none;
   cursor: pointer;
 }
-.secao_2 .app_card .header .ver_todos button {
+.Jogos_Exclusivo .app_card .header .ver_todos button {
   background: transparent;
   border: none;
   color: var(--colors-white);
@@ -669,7 +665,7 @@ header .content_esportes.show {
   align-items: center;
   gap: 10px;
 }
-.secao_2 .app_card .header .ver_todos button p {
+.Jogos_Exclusivo .app_card .header .ver_todos button p {
   color: var(--colors-blue);
   text-align: center;
   font-family: Poppins;
@@ -679,24 +675,75 @@ header .content_esportes.show {
   line-height: normal;
   display: block !important;
 }
-.secao_2 .app_card .cards {
+.Jogos_Exclusivo .app_card .cards {
   display: grid;
   gap: 32px;
   grid-template-columns: repeat(auto-fit, minmax(159px, 287px));
-  place-content: center;
+  justify-content: space-between;
+  padding-bottom: 107px;
 }
-.secao_2 .app_card .cards .card {
+.Jogos_Exclusivo .app_card .cards .card {
   position: relative;
+  max-height: 460px;
 }
-.secao_2 .app_card .cards .card img {
-  display: block;
+.Jogos_Exclusivo .app_card .cards .card p {
+  color: #E5E5E5;
+  font-size: 19.35px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.Jogos_Exclusivo .app_card .cards .card span {
+  color: #E5E5E5;
+  font-size: 15.05px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.Jogos_Exclusivo .app_card .cards .card .texto {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.Jogos_Exclusivo .app_card .cards .card .texto img {
   height: 393px;
+  display: block;
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+.Jogos_Exclusivo .app_card .cards .card .relative {
+  position: relative;
+  top: -234px;
+  left: 61px;
+  right: 0;
+}
+.Jogos_Exclusivo .app_card .cards .card_mais {
+  display: grid;
+  place-content: center;
+  width: 287px;
+  height: 412.8px;
+}
+.Jogos_Exclusivo .app_card .cards .card_mais .ver_todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+.Jogos_Exclusivo .app_card .cards .card_mais button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: transparent;
+  justify-content: space-between;
+  border: none;
+  gap: 13px;
+}
+.Jogos_Exclusivo .app_card .cards .card_mais button p {
+  color: var(--colors-white);
+}
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .secao_2 .app_card {
     padding: 0 14px;
   }
@@ -714,8 +761,14 @@ header .content_esportes.show {
   .secao_2 .app_card .header .logos {
     display: none;
   }
+  .secao_2 .app_card .cards {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(159px, 287px));
+    place-content: center;
+  }
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .secao_2 .app_card {
     padding: 0 14px;
   }
@@ -724,5 +777,177 @@ header .content_esportes.show {
   }
   .secao_2 .app_card .header .logos {
     display: none;
+  }
+}
+footer {
+  background: url("../assets/footer-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+footer .app_footer {
+  color: var(--colors-white);
+  margin: auto;
+  max-width: 1521px;
+}
+footer .app_footer .flex {
+  display: flex;
+  flex-direction: row;
+  padding: 0 51px;
+  align-items: center;
+}
+footer .app_footer .flex .content_footer {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  gap: 30px;
+  position: relative;
+  z-index: 5;
+}
+footer .app_footer .flex .content_footer img {
+  display: block;
+  width: 133.221px;
+}
+footer .app_footer .flex .content_footer h2 {
+  color: var(--colors-white);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110.2%;
+  /* 35.264px */
+}
+footer .app_footer .flex .content_footer .componentes {
+  max-width: 1053.325px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  gap: 24px;
+}
+footer .app_footer .flex .content_footer .componentes button {
+  color: var(--colors-white);
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+  align-items: center;
+  gap: 10px;
+}
+footer .app_footer .flex .content_footer .componentes button img {
+  max-width: 18px;
+  height: 18px;
+}
+footer .app_footer .flex .content_footer #botaoDownload {
+  background: var(--colors-blue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 0;
+  justify-content: center;
+  margin-bottom: 49px;
+  max-width: 266px;
+  width: 100%;
+  gap: 10px;
+}
+footer .app_footer .flex .content_footer #botaoDownload img {
+  max-width: 24px;
+}
+footer .app_footer .flex .content_footer #botaoDownload p {
+  color: var(--colors-white);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+footer .app_footer .flex .content_footer .aplicativo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+footer .app_footer .flex .content_footer .aplicativo p {
+  color: var(--colors-white);
+}
+footer .app_footer .flex .content_footer .aplicativo p a {
+  text-decoration: underline;
+}
+footer .app_footer .flex .content_footer .aplicativo img {
+  display: block;
+  max-width: 18px;
+}
+footer .app_footer .flex .ilustration {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  place-content: center;
+  flex-direction: column;
+  width: 60%;
+}
+footer .app_footer .flex .ilustration .ilustration_img1 {
+  position: relative;
+  top: 138px;
+  animation: float 7s ease-in-out infinite;
+}
+footer .app_footer .flex .ilustration .ilustration_img {
+  position: relative;
+  top: -250px;
+  right: -150px;
+  animation: float 8s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+@media (max-width: 800px) {
+  footer .app_footer .flex {
+    flex-direction: column;
+    padding: 111px 14px 0 14px;
+  }
+  footer .app_footer .flex .content_footer {
+    width: 100%;
+  }
+  footer .app_footer .flex .ilustration {
+    width: 100%;
+  }
+  footer .app_footer .flex .ilustration .ilustration_img1 {
+    position: relative;
+    top: 1px;
+    display: block;
+    width: 100%;
+  }
+  footer .app_footer .flex .ilustration .ilustration_img {
+    position: relative;
+    top: -301px;
+    right: -100px;
+    display: block;
+    max-width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  footer .app_footer .flex .ilustration {
+    width: 100%;
+  }
+  footer .app_footer .flex .ilustration .ilustration_img1 {
+    position: relative;
+    top: 45px;
+    display: block;
+    width: 100%;
+  }
+  footer .app_footer .flex .ilustration .ilustration_img {
+    position: relative;
+    top: -90px;
+    right: -70px;
+    display: block;
+    max-width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -1,12 +1,8 @@
-.secao_2 *{
-    border: 1px solid red;
-}
-.secao_2{
+
+.Jogos_Exclusivo{
     color: var(--colors-white);
-    // height: 100vh;
     width: 100%;
-    // background: var(--colors-gradient-2);
-    background: var(--colors-neutral);
+    background: var(--colors-gradient-2);
     .app_card{
         max-width: 1521px;
         margin: 0 auto;
@@ -20,14 +16,12 @@
             justify-content: space-between;
             p{
                 color: #8F9199;
-                font-family: Poppins;
                 font-size: 15px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: normal;
             }
             h2{
-                font-family: Poppins;
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 700;
@@ -67,15 +61,68 @@
             display: grid;
             gap: 32px;
             grid-template-columns: repeat(auto-fit, minmax(159px, 287px));
-            place-content: center;
+            justify-content: space-between;
+            padding-bottom: 107px;
             .card{
                 position: relative;
-                img{
-                    display: block;
-                    height: 393px;
-                    max-width: 100%;
-                    object-fit: cover;
-
+                max-height: 460px;
+                p{
+                    color: #E5E5E5;
+                    font-size: 19.35px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+                span{
+                    color: #E5E5E5;
+                    font-size: 15.05px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+                .texto{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 17px;
+                    img{
+                        height: 393px;
+                        display: block;
+                        max-width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .relative{
+                    position: relative;
+                    // bottom: 50px;
+                    top: -234px;
+                    left: 61px;
+                    right: 0;
+                    // img{
+                    // }
+                }
+            }
+            .card_mais{
+                display: grid;
+                place-content: center;
+                width: 287px;
+                height: 412.8px;
+                .ver_todos{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 36px;
+                }
+                button{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background: transparent;
+                    justify-content: space-between;
+                    border: none;
+                    gap: 13px;
+                    p{
+                        color: var(--colors-white);
+                    }
                 }
             }
         }
@@ -83,7 +130,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .secao_2{
         .app_card{
             padding: 0 14px;
@@ -101,11 +148,17 @@
                     display: none;
                 }
             }
+            .cards{
+                display: grid;
+                gap: 32px;
+                grid-template-columns: repeat(auto-fit, minmax(159px, 287px));
+                place-content: center;
+            }
         }
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .secao_2{
         .app_card{
             padding: 0 14px;

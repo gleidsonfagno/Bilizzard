@@ -1,0 +1,219 @@
+
+footer {
+    background: url("../assets/footer-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    // padding:  32px ;
+    overflow-x: hidden;
+
+    .app_footer {
+        color: var(--colors-white);
+        margin: auto;
+        max-width: 1521px;
+
+        .flex {
+            display: flex;
+            flex-direction: row;
+            padding: 0 51px;
+            align-items: center;
+
+            .content_footer {
+                // width: 50%;
+                display: flex;
+                flex-direction: column;
+                background: transparent;
+                gap: 30px;
+                position: relative;
+                z-index: 5;
+
+                img {
+                    display: block;
+                    width: 133.221px;
+                }
+
+                h2 {
+                    color: var(--colors-white);
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 110.2%;
+                    /* 35.264px */
+                }
+
+                .componentes {
+                    max-width: 1053.325px;
+                    display: flex;
+                    flex-direction: column;
+                    background: transparent;
+                    gap: 24px;
+
+                    button {
+                        color: var(--colors-white);
+                        display: flex;
+                        flex-direction: row;
+                        background: transparent;
+                        align-items: center;
+                        gap: 10px;
+
+                        img {
+                            max-width: 18px;
+                            height: 18px;
+                        }
+                    }
+                }
+
+                #botaoDownload {
+                    background: var(--colors-blue);
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 14px 0;
+                    justify-content: center;
+                    margin-bottom: 49px;
+                    max-width: 266px;
+                    width: 100%;
+                    gap: 10px;
+
+                    img {
+                        max-width: 24px;
+                    }
+
+                    p {
+                        color: var(--colors-white);
+                        text-align: center;
+                        ;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                    }
+                }
+
+                .aplicativo {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+
+                    p {
+                        color: var(--colors-white);
+
+                        a {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    img {
+                        display: block;
+                        max-width: 18px;
+                    }
+                }
+            }
+
+            .ilustration {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                place-content: center;
+                flex-direction: column;
+                width: 60%;
+
+                .ilustration_img1 {
+                    position: relative;
+                    top: 138px;
+                    animation: float 7s ease-in-out infinite;
+                }
+
+                .ilustration_img {
+                    position: relative;
+                    top: -250px;
+                    right: -150px;
+                    animation: float 8s ease-in-out infinite;
+                }
+
+                @keyframes float {
+
+                    0%,
+                    100% {
+                        transform: translateY(0);
+                    }
+
+                    50% {
+                        transform: translateY(-50px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+@media (max-width: 800px) {
+    footer {
+        .app_footer {
+            .flex {
+                flex-direction: column;
+                padding: 111px 14px 0 14px;
+
+                .content_footer {
+                    width: 100%;
+                }
+
+                .ilustration {
+                    width: 100%;
+
+                    .ilustration_img1 {
+                        position: relative;
+                        top: 1px;
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .ilustration_img {
+                        position: relative;
+                        top: -301px;
+                        right: -100px;
+                        display: block;
+                        max-width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+
+}
+
+@media (max-width: 400px) {
+    footer {
+        .app_footer {
+            .flex {
+                .ilustration {
+                    width: 100%;
+
+                    .ilustration_img1 {
+                        position: relative;
+                        top: 45px;
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .ilustration_img {
+                        position: relative;
+                        top: -90px;
+                        right: -70px;
+                        display: block;
+                        max-width: 100%;
+                    }
+                }
+
+            }
+        }
+
+    }
+}

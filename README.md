@@ -14,9 +14,9 @@ Para facilitar a codificação do projeto foi usado um protótipo do figma como 
 
 ## 🚀 Tecnologias
 
-- [Item 1](http://localhost:3000/)
-- [Item 2](http://localhost:3000/)
-- [Item 3](http://localhost:3000/)
+- [HTML]
+- [CSS]
+- [Javascript]
 
 ## 📝 Requisitos do desafio
 
